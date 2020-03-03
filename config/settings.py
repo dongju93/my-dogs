@@ -46,9 +46,18 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.naver',
+    'allauth.socialaccount.providers.kakao',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.instagram',
     'tagging',
     'dogs',
     'photo',
+    'disqus',
+    'shop',
+    'mathfilters',
+    'django.contrib.humanize',
+
 ]
 
 MIDDLEWARE = [
@@ -161,3 +170,38 @@ AUTHENTICATION_BACKENDS = (
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+
+DISQUS_WEBSITE_SHORTNAME = DISQUS_NAME
+
+# Social Login
+SOCIALACCOUNT_PROVIDERS = {
+    'kakao': {
+        'SCOPE': [
+            'profile ',
+            'account_email ',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    },
+
+    'instagram': {
+        'SCOPE': [
+            'basic',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    },
+
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}

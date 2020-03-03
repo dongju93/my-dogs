@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from dogs.views import *
 from dogs.models import *
 from django.views.generic.detail import DetailView
@@ -17,7 +17,7 @@ urlpatterns = [
     path('daily/update/<int:pk>/', dailyUpdate.as_view(), name='daily_update'),
     path('daily/delete/<int:pk>/', dailyDelete.as_view(), name='daily_delete'),
     path('daily/detail/<int:pk>/', dailyDetail.as_view(), name='daily_detail'),
-    path(r'^tag/(?P<tag>[^/]+(?u))/$', PostTOL.as_view(), name='tagged_object_list_daily'),
+    re_path(r'^tag/(?P<tag>[^/]+(?u))/$', PostTOL.as_view(), name='tagged_object_list_daily'),
 
     path('chart/', chartt, name='chart'),
 
