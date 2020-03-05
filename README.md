@@ -1,9 +1,12 @@
 # THIS IS "MYDOGS" FULL STACK PROJECT 2020 UPDATE
 
-### 1. Basic interpreter version update: 3.7 -> 3.8.2
-### 2. Django version update: 2.2 -> 3.0
-### 3. MySQL version update: 5.7 -> 8.0
-### 4. MySQL connector change: mysqlclient -> PyMysql
-### 5. Host server change: Amazon AWS EC2 -> Heroku
-### 6. Django ORM update and optimize
-### 7. Code review
+### 0. Basic interpreter version update: 3.7 -> 3.8.2
+### 1. Django version update: 2.2 -> 3.0
+### 2. MySQL version update: 5.7 -> 8.0
+### 3. MySQL connector change: mysqlclient -> PyMysql
+### 4. Host server change: Amazon AWS EC2 -> Heroku
+### 5. Django ORM update and optimize
+### 6. Product catalog Korean language support: url "SLUG:" remove
+### 7. IAMPORT payment more clarify: each order add datetime
+
+### 99. Code review

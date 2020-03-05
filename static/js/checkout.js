@@ -17,7 +17,7 @@ $(function () {
         // 결제 정보가 만들어졌으면 iamport로 실제 결제 시도
         if (merchant_id !== '') {
             IMP.request_pay({
-                merchant_uid: merchant_id,
+                merchant_uid: merchant_id + new Date().getTime(),
                 name: 'E-Shop product',
                 buyer_name:$('input[name="first_name"]').val()+" "+$('input[name="last_name"]').val(),
                 buyer_email:$('input[name="email"]').val(),

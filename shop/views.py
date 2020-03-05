@@ -1,13 +1,13 @@
 from django.shortcuts import render, get_object_or_404
 from shop.models import *
 from config.keys import *
-# from cart.forms import AddProductForm
+from cart.forms import AddProductForm
 from django.contrib.auth.decorators import login_required
-# from cart.cart import Cart
+from cart.cart import Cart
 from django.db.models import Sum, Avg, Count, Subquery
 
-# from order.models import Order, OrderItem, OrderTransaction
-# from coupon.models import Coupon
+from order.models import Order, OrderItem, OrderTransaction
+from coupon.models import Coupon
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
@@ -24,7 +24,7 @@ def product_in_category(request, category_slug=None):
         products = products.filter(category=current_category)
 
     return render(request, 'shop/list.html',
-                  {'current_category': current_category, 'categories': categories, 'products': products, 'cart':cart})
+                  {'current_category': current_category, 'categories': categories, 'products': products, 'cart': cart})
 
 @login_required
 def product_detail(request, id, product_slug=None):
@@ -36,11 +36,11 @@ def product_detail(request, id, product_slug=None):
 
 
 from django.db import connections
-import MySQLdb
+import pymysql
 
 def myorders(request):
 
-    conn = MySQLdb.connect(
+    conn = pymysql.connect(
         host=DB_HOST, user=DB_USER, password=DB_PASSWORD,
         db=DB_NAME, charset='utf8')
 

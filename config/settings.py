@@ -57,6 +57,9 @@ INSTALLED_APPS = [
     'shop',
     'mathfilters',
     'django.contrib.humanize',
+    'cart',
+    'coupon',
+    'order',
 
 ]
 
@@ -205,3 +208,5 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+CART_ID = 'cart_in_session'
