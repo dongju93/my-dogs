@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="edc70a6b-a7e8-47bd-b4db-ba8400e8b478" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583603315823</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="6. deploy heroku">
+      <created>1583603430562</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1583603430562</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -121,18 +128,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="524" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1583573988908" />
-    <state x="320" y="8" key="CommitChangelistDialog2" timestamp="1583603315175">
+    <state x="320" y="8" key="CommitChangelistDialog2" timestamp="1583603429928">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="320" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583603315175" />
-    <state x="120" y="46" key="SettingsEditor" timestamp="1583598870641">
+    <state x="320" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583603429928" />
+    <state x="120" y="46" key="SettingsEditor" timestamp="1583603584636">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="120" y="46" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583598870641" />
-    <state x="263" y="148" key="Vcs.Push.Dialog.v2" timestamp="1583603317061">
+    <state x="120" y="46" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583603584636" />
+    <state x="263" y="148" key="Vcs.Push.Dialog.v2" timestamp="1583603432652">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="263" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583603317061" />
+    <state x="263" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583603432652" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1583530590168">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
