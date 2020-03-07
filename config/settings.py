@@ -14,6 +14,9 @@ import os
 from .keys import *
 import pymysql
 pymysql.install_as_MySQLdb()
+# for heroku
+import dj_database_url
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,12 +26,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = SECRET_KEY_KEY
+
+# SECRET_KEY = SECRET_KEY_KEY
+# for heroku
+SECRET_KEY = os.environ['SECRET_KEY_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -71,6 +77,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # for heroku
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -100,16 +108,23 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': DB_NAME,
-        'USER': DB_USER,
-        'PASSWORD': DB_PASSWORD,
-        'HOST': DB_HOST,
+        # 'NAME': DB_NAME,
+        # 'USER': DB_USER,
+        # 'PASSWORD': DB_PASSWORD,
+        # 'HOST': DB_HOST,
+        # for heroku
+        'NAME': os.environ['DB_NAME'],
+        'USER': os.environ['DB_USER'],
+        'PASSWORD': os.environ['DB_PASSWORD'],
+        'HOST': os.environ['DB_HOST'],
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES,NO_ZERO_DATE,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO'"
         },
     }
 }
+# for heroku
+DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
 
 
 # Password validation
@@ -148,10 +163,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-AWS_ACCESS_KEY_ID = ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY = SECRET_ACCESS_KEY
+# AWS_ACCESS_KEY_ID = ACCESS_KEY_ID
+# AWS_SECRET_ACCESS_KEY = SECRET_ACCESS_KEY
+# for heroku
+AWS_ACCESS_KEY_ID = os.environ['ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['SECRET_ACCESS_KEY']
 AWS_REGION = 'ap-northeast-2'
-AWS_STORAGE_BUCKET_NAME = BUCKET_NAME
+# AWS_STORAGE_BUCKET_NAME = BUCKET_NAME
+# for heroku
+AWS_STORAGE_BUCKET_NAME = os.environ['BUCKET_NAME']
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME, AWS_REGION)
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
@@ -175,7 +195,9 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 
-DISQUS_WEBSITE_SHORTNAME = DISQUS_NAME
+# DISQUS_WEBSITE_SHORTNAME = DISQUS_NAME
+# for heroku
+DISQUS_WEBSITE_SHORTNAME = os.environ['SECRET_ACCESS_KEY']
 
 # Social Login
 SOCIALACCOUNT_PROVIDERS = {

@@ -1,4 +1,5 @@
 from datetime import date
+import os
 
 import requests
 from config import keys
@@ -6,8 +7,11 @@ from config import keys
 # iamport 에서 토큰을 얻어옴
 def get_token():
     access_data = {
-        'imp_key': keys.IAMPORT_KEY,
-        'imp_secret': keys.IAMPORT_SECRET
+        # 'imp_key': keys.IAMPORT_KEY,
+        # 'imp_secret': keys.IAMPORT_SECRET
+        # for heroku
+        'imp_key': os.environ['IAMPORT_KEY'],
+        'imp_secret': os.environ['IAMPORT_SECRET']
     }
 
     url = "https://api.iamport.kr/users/getToken"
