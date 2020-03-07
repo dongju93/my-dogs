@@ -1,3 +1,5 @@
+from datetime import date
+
 import requests
 from config import keys
 
@@ -13,7 +15,7 @@ def get_token():
     req = requests.post(url, data=access_data)
     access_res = req.json()
 
-    if access_res['code'] is 0:
+    if access_res['code'] == 0:
         return access_res['response']['access_token']
     else:
         return None
@@ -22,11 +24,11 @@ def get_token():
 def payments_prepare(order_id, amount, *args, **kwargs):
     access_token = get_token()
 
-    print(access_token)
+    print(order_id, 111)
 
     if access_token:
         access_data = {
-            'merchant_uid': order_id,
+            'merchant_uid': order_id+str(date.today()),
             'amount': amount
         }
 
@@ -39,7 +41,7 @@ def payments_prepare(order_id, amount, *args, **kwargs):
 
         print(res)
 
-        if res['code'] is not 0:
+        if res['code'] != 0:
             raise ValueError("API 통신 오류")
     else:
         raise ValueError("토큰 오류")
@@ -48,8 +50,9 @@ def payments_prepare(order_id, amount, *args, **kwargs):
 # 결제가 이루어졌음을 확인해주는 함수 - 실 결제 정보를 iamport에서 가져옴
 def find_transaction(order_id, *args, **kwargs):
     access_token = get_token()
+
     if access_token:
-        url = "https://api.iamport.kr/payments/find/"+order_id
+        url = "https://api.iamport.kr/payments/find/"+order_id+str(date.today())
 
         headers = {
             'Authorization': access_token
@@ -58,7 +61,7 @@ def find_transaction(order_id, *args, **kwargs):
         req = requests.post(url, headers=headers)
         res = req.json()
 
-        if res['code'] is 0:
+        if res['code'] == 0:
             context = {
                 'imp_id': res['response']['imp_uid'],
                 'merchant_order_id': res['response']['merchant_uid'],

@@ -17,7 +17,7 @@ $(function () {
         // 결제 정보가 만들어졌으면 iamport로 실제 결제 시도
         if (merchant_id !== '') {
             IMP.request_pay({
-                merchant_uid: merchant_id + new Date().getTime(),
+                merchant_uid: merchant_id,
                 name: 'E-Shop product',
                 buyer_name:$('input[name="first_name"]').val()+" "+$('input[name="last_name"]').val(),
                 buyer_email:$('input[name="email"]').val(),
@@ -31,6 +31,7 @@ $(function () {
                     msg += '카드 승인번호 : ' + rsp.apply_num;
                     // 결제가 완료되었으면 비교해서 디비에 반영
                     ImpTransaction(e, order_id, rsp.merchant_uid, rsp.imp_uid, rsp.paid_amount);
+                    console.log(msg);
                 } else {
                     var msg = '결제에 실패하였습니다.';
                     msg += '에러내용 : ' + rsp.error_msg;

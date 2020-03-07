@@ -1,7 +1,8 @@
+from datetime import date
+
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.auth.models import User
-
 from coupon.models import Coupon
 class Order(models.Model):
 
@@ -56,7 +57,7 @@ from .iamport import payments_prepare, find_transaction
 class OrderTransactionManager(models.Manager):
     def create_new(self,order,amount,success=None,transaction_status=None):
         if not order:
-            raise ValueError("주문 오류")
+            raise ValueError("주문 오류 this")
 
         order_hash = hashlib.sha1(str(order.id).encode('utf-8')).hexdigest()
         email_hash = str(order.email).split("@")[0]
@@ -68,7 +69,7 @@ class OrderTransactionManager(models.Manager):
 
         transaction = self.model(
             order=order,
-            merchant_order_id=merchant_order_id,
+            merchant_order_id=merchant_order_id+str(date.today()),
             amount=amount
         )
 
@@ -110,14 +111,15 @@ class OrderTransaction(models.Model):
 
 def order_payment_validation(sender, instance, created, *args, **kwargs):
     if instance.transaction_id:
+        print(instance.merchant_order_id,"IMPORT")
         import_transaction = OrderTransaction.objects.get_transaction(merchant_order_id=instance.merchant_order_id)
 
         merchant_order_id = import_transaction['merchant_order_id']
         imp_id = import_transaction['imp_id']
         amount = import_transaction['amount']
 
-        local_transaction = OrderTransaction.objects.filter(merchant_order_id = merchant_order_id, transaction_id = imp_id,amount = amount).exists()
-
+        print(merchant_order_id,"LOCAL")
+        local_transaction = OrderTransaction.objects.filter(merchant_order_id=merchant_order_id, transaction_id=imp_id, amount=amount).exists()
         if not import_transaction or not local_transaction:
             raise ValueError("비정상 거래입니다.")
 

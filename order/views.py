@@ -65,7 +65,7 @@ class OrderCreateAjaxView(View):
 class OrderCheckoutAjaxView(View):
     def post(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
-            return JsonResponse({"authenticated":False}, status=403)
+            return JsonResponse({"authenticated": False}, status=403)
 
         order_id = request.POST.get('order_id')
         order = Order.objects.get(id=order_id)
@@ -77,7 +77,7 @@ class OrderCheckoutAjaxView(View):
                 amount=amount
             )
         except Exception as e:
-            print(e)
+            print(e, 11)
             merchant_order_id = None
 
 
@@ -86,6 +86,7 @@ class OrderCheckoutAjaxView(View):
                 "works": True,
                 "merchant_id": merchant_order_id
             }
+            print(merchant_order_id, 111)
             return JsonResponse(data)
         else:
             return JsonResponse({}, status=401)
@@ -101,15 +102,18 @@ class OrderImpAjaxView(View):
         merchant_id = request.POST.get('merchant_id')
         imp_id = request.POST.get('imp_id')
         amount = request.POST.get('amount')
+        print(merchant_id, 222)
 
         try:
+            print(merchant_id, 222)
             trans = OrderTransaction.objects.get(
                 order=order,
                 merchant_order_id=merchant_id,
                 amount=amount
             )
+            print(trans, 222222)
         except Exception as e:
-            print(e)
+            print(e, 22)
             trans = None
 
         if trans is not None:
