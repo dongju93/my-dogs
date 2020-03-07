@@ -29,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECRET_KEY = SECRET_KEY_KEY
 # for heroku
-SECRET_KEY = os.environ['SECRET_KEY_KEY']
+SECRET_KEY = '_yu1ic09^e9&s&e%pp_odnucd)v&ls@^wye#fdu18h&r@p&jzz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
