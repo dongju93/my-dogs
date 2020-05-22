@@ -8,6 +8,7 @@
 
 !/venv/Lib/**
 /venv/Lib/site-packages/*
+!/venv/Lib/site-packages/six.py
 /venv/Lib/site-packages/disqus/**
 !/venv/Lib/site-packages/disqus/
 /venv/Lib/site-packages/disqus/api.py
