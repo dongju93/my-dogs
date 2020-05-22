@@ -1,6 +1,8 @@
 *.pyc
 *~
 /venv
+/venv**
+!/venv/Lib/site-packages/disqus/__init__.py
 __pycache__
 .DS_Store
 keys.py
