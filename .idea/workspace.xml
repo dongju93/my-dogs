@@ -19,7 +19,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -144,7 +143,21 @@
       <option name="project" value="LOCAL" />
       <updated>1590146101028</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="6. deploy heroku">
+      <created>1590146365172</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1590146365172</updated>
+    </task>
+    <task id="LOCAL-00017" summary="6. deploy heroku">
+      <created>1590146377117</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1590146377117</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -163,22 +176,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="524" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1583573988908" />
-    <state x="320" y="8" key="CommitChangelistDialog2" timestamp="1590146364745">
+    <state x="691" y="124" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1590275337378">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="320" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590146364745" />
+    <state x="691" y="124" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1590275337378" />
+    <state x="320" y="8" key="CommitChangelistDialog2" timestamp="1590146376662">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="320" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590146376662" />
     <state x="120" y="46" key="SettingsEditor" timestamp="1583603584636">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="120" y="46" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583603584636" />
-    <state x="263" y="148" key="Vcs.Push.Dialog.v2" timestamp="1590146105339">
+    <state x="263" y="148" key="Vcs.Push.Dialog.v2" timestamp="1590146382772">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="263" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590146105339" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1583530590168">
+    <state x="263" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590146382772" />
+    <state x="0" y="0" width="746" height="824" key="find.popup" timestamp="1590293013215">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1583530590168" />
+    <state x="0" y="0" width="746" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1590293013215" />
+    <state x="651" y="145" width="700" height="530" key="recent.locations.popup" timestamp="1590293012109">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="651" y="145" width="700" height="530" key="recent.locations.popup/0.0.1536.824@0.0.1536.824" timestamp="1590293012109" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1590293013239">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1590293013239" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
