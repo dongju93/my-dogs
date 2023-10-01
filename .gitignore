@@ -18,5 +18,5 @@
 .DS_Store
 /.idea
 /config/keys.py
-/venv
+/myven
 **/migrations/
