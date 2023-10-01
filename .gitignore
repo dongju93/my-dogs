@@ -17,6 +17,6 @@
 
 __pycache__
 .DS_Store
-.idea
+/.idea
 /config/keys.py
 /config/settings.py
