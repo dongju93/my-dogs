@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="edc70a6b-a7e8-47bd-b4db-ba8400e8b478" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/requirements.zip" afterDir="false" />
+    <list default="true" id="dc50761d-556e-48b9-832d-54f86a0376b4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/readme.old.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/my_dogs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/my_dogs.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/disqus/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/six.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,214 +24,42 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1YUTXmaBSoWqdkPmAKiJ1e06GT9" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2W9YcPfrUbgyqgCvVSUjOBUnCmA" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/dong-ju/Documents/My_code/my_dogs",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config" />
+    </key>
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="edc70a6b-a7e8-47bd-b4db-ba8400e8b478" name="Default Changelist" comment="" />
-      <created>1582996215249</created>
+      <changelist id="dc50761d-556e-48b9-832d-54f86a0376b4" name="Changes" comment="" />
+      <created>1696146341529</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1582996215249</updated>
+      <updated>1696146341529</updated>
     </task>
-    <task id="LOCAL-00001" summary="2. add main, allauth, dogs, photo, tag">
-      <created>1583000440291</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1583000440291</updated>
-    </task>
-    <task id="LOCAL-00002" summary="3. social login done, add new s3 address, cart created">
-      <created>1583230152289</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1583230152290</updated>
-    </task>
-    <task id="LOCAL-00003" summary="ignore">
-      <created>1583266551713</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1583266551713</updated>
-    </task>
-    <task id="LOCAL-00004" summary="4. add and modify order system">
-      <created>1583406110870</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1583406110870</updated>
-    </task>
-    <task id="LOCAL-00005" summary="5. modify merchant_uid">
-      <created>1583572044090</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1583572044091</updated>
-    </task>
-    <task id="LOCAL-00006" summary="5. deploy heroku">
-      <created>1583601781619</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1583601781619</updated>
-    </task>
-    <task id="LOCAL-00007" summary="6. deploy heroku">
-      <created>1583601905552</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1583601905552</updated>
-    </task>
-    <task id="LOCAL-00008" summary="6. deploy heroku">
-      <created>1583603188758</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1583603188758</updated>
-    </task>
-    <task id="LOCAL-00009" summary="6. deploy heroku">
-      <created>1583603315823</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1583603315823</updated>
-    </task>
-    <task id="LOCAL-00010" summary="6. deploy heroku">
-      <created>1583603430562</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1583603430562</updated>
-    </task>
-    <task id="LOCAL-00011" summary="6. deploy heroku">
-      <created>1583605328663</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1583605328663</updated>
-    </task>
-    <task id="LOCAL-00012" summary="6. deploy heroku">
-      <created>1590144848567</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1590144848568</updated>
-    </task>
-    <task id="LOCAL-00013" summary="6. deploy heroku">
-      <created>1590144968019</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1590144968019</updated>
-    </task>
-    <task id="LOCAL-00014" summary="6. deploy heroku">
-      <created>1590145021867</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1590145021867</updated>
-    </task>
-    <task id="LOCAL-00015" summary="6. deploy heroku">
-      <created>1590146101028</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1590146101028</updated>
-    </task>
-    <task id="LOCAL-00016" summary="6. deploy heroku">
-      <created>1590146365172</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1590146365172</updated>
-    </task>
-    <task id="LOCAL-00017" summary="6. deploy heroku">
-      <created>1590146377117</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1590146377117</updated>
-    </task>
-    <task id="LOCAL-00018" summary="6. deploy heroku">
-      <created>1590295604451</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1590295604451</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="2. add main, allauth, dogs, photo, tag" />
-    <MESSAGE value="3. social login done, add new s3 address, cart created" />
-    <MESSAGE value="ignore" />
-    <MESSAGE value="4. add and modify order system" />
-    <MESSAGE value="5. modify merchant_uid" />
-    <MESSAGE value="5. deploy heroku" />
-    <MESSAGE value="6. deploy heroku" />
-    <option name="LAST_COMMIT_MESSAGE" value="6. deploy heroku" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="524" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583573988908">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="524" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1583573988908" />
-    <state x="691" y="124" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1590275337378">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="691" y="124" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1590275337378" />
-    <state x="320" y="0" key="CommitChangelistDialog2" timestamp="1590295603910">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="320" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590295603910" />
-    <state x="120" y="46" key="SettingsEditor" timestamp="1590608440083">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="120" y="46" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590608440083" />
-    <state x="263" y="148" key="Vcs.Push.Dialog.v2" timestamp="1590295611173">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="263" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590295611173" />
-    <state x="0" y="0" width="746" height="824" key="find.popup" timestamp="1590293013215">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="0" y="0" width="746" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1590293013215" />
-    <state x="651" y="145" width="700" height="530" key="recent.locations.popup" timestamp="1590293012109">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="651" y="145" width="700" height="530" key="recent.locations.popup/0.0.1536.824@0.0.1536.824" timestamp="1590293012109" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1591965346832">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1591965346832" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/Lib/site-packages/tagging/forms.py</url>
-          <line>3</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
