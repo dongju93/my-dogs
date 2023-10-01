@@ -19,4 +19,3 @@ __pycache__
 .DS_Store
 /.idea
 /config/keys.py
-/config/settings.py
