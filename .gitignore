@@ -4,7 +4,6 @@
 /venv/Scripts/*
 /venv/Lib/*
 /venv/Include/*
-
 !/venv/Lib/**
 /venv/Lib/site-packages/*
 !/venv/Lib/site-packages/six.py
@@ -15,6 +14,9 @@
 /venv/Lib/site-packages/disqus/tests.py
 /venv/Lib/site-packages/disqus/wxr_feed.py
 !/venv/Lib/site-packages/disqus/__init__.py
+
 __pycache__
 .DS_Store
-keys.py
+.idea
+/config/keys.py
+/config/settings.py
