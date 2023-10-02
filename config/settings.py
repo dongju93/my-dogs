@@ -13,9 +13,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 from .keys import *
 import pymysql
+
 pymysql.install_as_MySQLdb()
 # for heroku
-import dj_database_url
+# import dj_database_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -33,97 +34,102 @@ SECRET_KEY = SECRET_KEY_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'storages',
-    'main',
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.naver',
-    'allauth.socialaccount.providers.kakao',
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.instagram',
-    'tagging',
-    'dogs',
-    'photo',
-    'disqus',
-    'shop',
-    'mathfilters',
-    'django.contrib.humanize',
-    'cart',
-    'coupon',
-    'order',
-
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "storages",
+    "main",
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.naver",
+    "allauth.socialaccount.providers.kakao",
+    "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.instagram",
+    "tagging",
+    "dogs",
+    "photo",
+    "disqus",
+    "shop",
+    "mathfilters",
+    "django.contrib.humanize",
+    "cart",
+    "coupon",
+    "order",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
     # for heroku
-    'whitenoise.middleware.WhiteNoiseMiddleware'
+    # 'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = "config.urls"
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'templates', 'allauth')],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [
+            os.path.join(BASE_DIR, "templates"),
+            os.path.join(BASE_DIR, "templates", "allauth"),
+        ],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = "config.wsgi.application"
 
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': DB_NAME,
-        # 'USER': DB_USER,
-        # 'PASSWORD': DB_PASSWORD,
-        # 'HOST': DB_HOST,
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": DB_NAME,
+        "USER": DB_USER,
+        "PASSWORD": DB_PASSWORD,
+        "HOST": DB_HOST,
         # for heroku
-        'NAME': os.environ['DB_NAME'],
-        'USER': os.environ['DB_USER'],
-        'PASSWORD': os.environ['DB_PASSWORD'],
-        'HOST': os.environ['DB_HOST'],
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES,NO_ZERO_DATE,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO'"
+        # 'NAME': os.environ['DB_NAME'],
+        # 'USER': os.environ['DB_USER'],
+        # 'PASSWORD': os.environ['DB_PASSWORD'],
+        # 'HOST': os.environ['DB_HOST'],
+        "PORT": "3306",
+        "OPTIONS": {
+            "init_command": "SET sql_mode='STRICT_TRANS_TABLES,NO_ZERO_DATE,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO'"
         },
     }
 }
 # for heroku
-DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
+# DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
 
 
 # Password validation
@@ -131,16 +137,16 @@ DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
@@ -148,9 +154,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'ko-kr'
+LANGUAGE_CODE = "ko-kr"
 
-TIME_ZONE = 'Asia/Seoul'
+TIME_ZONE = "Asia/Seoul"
 
 USE_I18N = True
 
@@ -162,72 +168,89 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-# AWS_ACCESS_KEY_ID = ACCESS_KEY_ID
-# AWS_SECRET_ACCESS_KEY = SECRET_ACCESS_KEY
+AWS_ACCESS_KEY_ID = ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY = SECRET_ACCESS_KEY
 # for heroku
-AWS_ACCESS_KEY_ID = os.environ['ACCESS_KEY_ID']
-AWS_SECRET_ACCESS_KEY = os.environ['SECRET_ACCESS_KEY']
-AWS_REGION = 'ap-northeast-2'
-# AWS_STORAGE_BUCKET_NAME = BUCKET_NAME
+# AWS_ACCESS_KEY_ID = os.environ['ACCESS_KEY_ID']
+# AWS_SECRET_ACCESS_KEY = os.environ['SECRET_ACCESS_KEY']
+AWS_REGION = "ap-northeast-2"
+AWS_STORAGE_BUCKET_NAME = BUCKET_NAME
 # for heroku
-AWS_STORAGE_BUCKET_NAME = os.environ['BUCKET_NAME']
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME, AWS_REGION)
+# AWS_STORAGE_BUCKET_NAME = os.environ['BUCKET_NAME']
+AWS_S3_CUSTOM_DOMAIN = "%s.s3.%s.amazonaws.com" % (AWS_STORAGE_BUCKET_NAME, AWS_REGION)
 AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
+    "CacheControl": "max-age=86400",
 }
-AWS_DEFAULT_ACL = 'public-read'
-AWS_LOCATION = 'static'
+AWS_DEFAULT_ACL = "public-read"
+AWS_LOCATION = "static"
 
-STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-DEFAULT_FILE_STORAGE = 'config.asset_storage.MediaStorage'
+DEFAULT_FILE_STORAGE = "config.asset_storage.MediaStorage"
 
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
 )
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/'
-ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = "/"
+ACCOUNT_LOGOUT_REDIRECT_URL = "/"
 
-# DISQUS_WEBSITE_SHORTNAME = DISQUS_NAME
+DISQUS_WEBSITE_SHORTNAME = DISQUS_NAME
 # for heroku
-DISQUS_WEBSITE_SHORTNAME = os.environ['SECRET_ACCESS_KEY']
+# DISQUS_WEBSITE_SHORTNAME = os.environ['SECRET_ACCESS_KEY']
 
 # Social Login
 SOCIALACCOUNT_PROVIDERS = {
-    'kakao': {
-        'SCOPE': [
-            'profile ',
-            'account_email ',
+    "kakao": {
+        "SCOPE": [
+            "profile ",
+            "account_email ",
         ],
-        'AUTH_PARAMS': {
-            'access_type': 'online',
-        }
+        "AUTH_PARAMS": {
+            "access_type": "online",
+        },
     },
-
-    'instagram': {
-        'SCOPE': [
-            'basic',
+    "instagram": {
+        "SCOPE": [
+            "basic",
         ],
-        'AUTH_PARAMS': {
-            'access_type': 'online',
-        }
+        "AUTH_PARAMS": {
+            "access_type": "online",
+        },
     },
-
-    'google': {
-        'SCOPE': [
-            'profile',
-            'email',
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email",
         ],
-        'AUTH_PARAMS': {
-            'access_type': 'online',
-        }
-    }
+        "AUTH_PARAMS": {
+            "access_type": "online",
+        },
+    },
 }
 
-CART_ID = 'cart_in_session'
+CART_ID = "cart_in_session"
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "file": {
+            "level": "ERROR",
+            "class": "logging.FileHandler",
+            "filename": "logs/errors.log",
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["file"],
+            "level": "ERROR",
+            "propagate": True,
+        },
+    },
+}

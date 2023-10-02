@@ -20,3 +20,5 @@
 /config/keys.py
 /myven
 **/migrations/
+**/migrations/
+**/__pycache__/
