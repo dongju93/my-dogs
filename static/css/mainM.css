@@ -1,8 +1,16 @@
 /* Slide */
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Verdana, sans-serif;
+}
+.mySlides {
+    display: none;
+}
+img {
+    vertical-align: middle;
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -55,26 +63,34 @@ img {vertical-align: middle;}
 }
 
 @-webkit-keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
-    .text {font-size: 11px}
+    .text {
+        font-size: 11px;
+    }
 }
-
 
 /* No enter, space */
 .nowr {
     white-space: nowrap;
 }
-
 
 /* Mouse hover text overlays */
 .fadetext {
@@ -91,7 +107,7 @@ img {vertical-align: middle;}
     height: 100%;
     width: 100%;
     opacity: 0;
-    transition: .5s ease;
+    transition: 0.5s ease;
 }
 
 .fadetext:hover .overlays {
@@ -99,7 +115,7 @@ img {vertical-align: middle;}
 }
 
 .fadeimagetext {
-    color: #80F5FF;
+    color: #80f5ff;
     font-size: 20px;
     font-weight: 600;
     position: absolute;
@@ -109,9 +125,8 @@ img {vertical-align: middle;}
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
-    font-family: 'SeoulNamsanM';
+    font-family: "SeoulNamsanM";
 }
-
 
 /* Wave image scroll */
 .wavesection {
@@ -120,7 +135,6 @@ img {vertical-align: middle;}
     background-repeat: no-repeat;
     background-position: center center;
 }
-
 
 /* Background video */
 .noop {
@@ -138,5 +152,5 @@ img {vertical-align: middle;}
     position: relative;
     top: -350px;
     color: #ffffff;
-    z-index: 10;"
+    z-index: 10;
 }

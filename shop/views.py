@@ -11,7 +11,6 @@ from coupon.models import Coupon
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
-
 @login_required
 def product_in_category(request, category_slug=None):
     current_category = None
@@ -23,35 +22,51 @@ def product_in_category(request, category_slug=None):
         current_category = get_object_or_404(Category, slug=category_slug)
         products = products.filter(category=current_category)
 
-    return render(request, 'shop/list.html',
-                  {'current_category': current_category, 'categories': categories, 'products': products, 'cart': cart})
+    return render(
+        request,
+        "shop/list.html",
+        {
+            "current_category": current_category,
+            "categories": categories,
+            "products": products,
+            "cart": cart,
+        },
+    )
+
 
 @login_required
 def product_detail(request, id, product_slug=None):
     product = get_object_or_404(Product, id=id, slug=product_slug)
-    add_to_cart = AddProductForm(initial={'quantity': 1})
+    add_to_cart = AddProductForm(initial={"quantity": 1})
     cart = Cart(request)
 
-    return render(request, 'shop/detail.html', {'product': product, 'add_to_cart':add_to_cart, 'cart':cart})
+    return render(
+        request,
+        "shop/detail.html",
+        {"product": product, "add_to_cart": add_to_cart, "cart": cart},
+    )
 
 
 from django.db import connections
 import pymysql
 
-def myorders(request):
 
+def myorders(request):
     conn = pymysql.connect(
-        host=DB_HOST, user=DB_USER, password=DB_PASSWORD,
-        db=DB_NAME, charset='utf8')
+        host=DB_HOST, user=DB_USER, password=DB_PASSWORD, db=DB_NAME, charset="utf8"
+    )
 
     cursor = conn.cursor()
-    cursor.execute("SELECT trans.created, trans.order_id, pro.name, idid.quantity, idid.price, cou.code, oor.discount, trans.amount, oor.paid, oor.shipping, oor.last_name, oor.first_name, oor.phone, oor.email, oor.city, oor.address, oor.postal_code \
+    cursor.execute(
+        "SELECT trans.created, trans.order_id, pro.name, idid.quantity, idid.price, cou.code, oor.discount, trans.amount, oor.paid, oor.shipping, oor.last_name, oor.first_name, oor.phone, oor.email, oor.city, oor.address, oor.postal_code \
                     FROM order_order as oor, order_orderitem as idid, shop_product as pro, coupon_coupon as cou, order_ordertransaction as trans \
-                    WHERE oor.id = idid.order_id and idid.product_id = pro.id and oor.coupon_id = cou.id and trans.order_id = oor.id and oor.orderuser_id = %s order by trans.created desc", [request.user.id])
+                    WHERE oor.id = idid.order_id and idid.product_id = pro.id and oor.coupon_id = cou.id and trans.order_id = oor.id and oor.orderuser_id = %s order by trans.created desc",
+        [request.user.id],
+    )
     rows = cursor.fetchall()
 
     paginator = Paginator(rows, 5)  # Show 20 contacts per page
-    page = request.GET.get('page')
+    page = request.GET.get("page")
     try:
         row = paginator.page(page)
     except PageNotAnInteger:
@@ -61,4 +76,4 @@ def myorders(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         row = paginator.page(paginator.num_pages)
 
-    return render(request, 'shop/myorders.html', {'row': row})
+    return render(request, "shop/myorders.html", {"row": row})

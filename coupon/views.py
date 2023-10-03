@@ -12,13 +12,15 @@ def add_coupon(request):
     form = AddCouponForm(request.POST)
 
     if form.is_valid():
-        code = form.cleaned_data['code']
+        code = form.cleaned_data["code"]
 
         try:
-            coupon = Coupon.objects.get(code__iexact=code, use_from__lte=now, use_to__gte=now, active=True)
-            request.session['coupon_id'] = coupon.id
+            coupon = Coupon.objects.get(
+                code__iexact=code, use_from__lte=now, use_to__gte=now, active=True
+            )
+            request.session["coupon_id"] = coupon.id
 
         except Coupon.DoesNotExist:
-            request.session['coupon_id'] = None
+            request.session["coupon_id"] = None
 
-    return redirect('cart:detail')
+    return redirect("cart:detail")

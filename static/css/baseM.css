@@ -3,7 +3,7 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #B2CCFF;
+    background-color: #b2ccff;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -13,14 +13,15 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #B2CCFF;
+    background-color: #b2ccff;
 }
 
 li {
     float: left;
 }
 
-li a, .dropbtn {
+li a,
+.dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
@@ -28,7 +29,8 @@ li a, .dropbtn {
     text-decoration: none;
 }
 
-li a:hover, .dropdown:hover .dropbtn {
+li a:hover,
+.dropdown:hover .dropbtn {
     background-color: #ccdae0;
 }
 
@@ -41,7 +43,7 @@ li.dropdown {
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -62,9 +64,8 @@ li.dropdown {
 }
 
 #green {
-    background-color: #4CAF50;
+    background-color: #4caf50;
 }
-
 
 /* Footer */
 #footer {
@@ -107,13 +108,11 @@ li.dropdown {
     }
 }
 
-
 /* Background png */
 .paper {
     background-image: url("https://mydogs-s3.s3.ap-northeast-2.amazonaws.com/static/media/background/back.jpg");
     background-repeat: repeat;
 }
-
 
 /* Like and Liked */
 .like {
@@ -122,43 +121,55 @@ li.dropdown {
     background-image: url(http://hyunjoolee.pythonanywhere.com/static/images/sprites/fef349.png);
     border: none;
     background-position: -26px -349px;
-    background-color: rgba( 255, 255, 255, 0.0 );
+    background-color: rgba(255, 255, 255, 0);
     margin: 0px 8px 0px 0;
 }
 
 .liked {
     background-image: url(http://hyunjoolee.pythonanywhere.com/static/images/sprites/fef349.png);
-    background-color: rgba( 255, 255, 255, 0.0 );
+    background-color: rgba(255, 255, 255, 0);
     background-position: 0 -349px;
 }
 
-
 /* White color */
 .white {
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-
 /* AM/PM hidden */
-input[type=time]::-webkit-datetime-edit-ampm-field {
+input[type="time"]::-webkit-datetime-edit-ampm-field {
     display: none;
 }
 
-
 /* Font */
 @font-face {
-    font-family: 'HSGaeulsenggak'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/HSGaeulsenggak.woff') format('woff'); font-weight: normal; font-style: normal;
+    font-family: "HSGaeulsenggak";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/HSGaeulsenggak.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-    font-family: 'SeoulNamsanM'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulNamsanM.woff') format('woff'); font-weight: normal; font-style: normal;
+    font-family: "SeoulNamsanM";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulNamsanM.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-    font-family: 'Binggrae-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff'); font-weight: normal; font-style: normal;
+    font-family: "Binggrae-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-    font-family: 'BMDOHYEON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff'); font-weight: bold; font-style: normal;
+    font-family: "BMDOHYEON";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff")
+        format("woff");
+    font-weight: bold;
+    font-style: normal;
 }
-
 
 /* Form with no visual */
 .clearform {
@@ -166,13 +177,11 @@ input[type=time]::-webkit-datetime-edit-ampm-field {
     background: transparent;
 }
 
-
 /* Form with round */
 .roundop {
     border-radius: 5px;
-    background-color: rgba( 255, 255, 255, 0.5 );
+    background-color: rgba(255, 255, 255, 0.5);
 }
-
 
 /* Background shadow */
 .shadows {
@@ -180,48 +189,48 @@ input[type=time]::-webkit-datetime-edit-ampm-field {
     box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
 }
 
-
 /* Button with line animation */
 .movebtn {
-    background:#00D8FF;
-    color:#fff;
-    border:none;
-    position:relative;
-    height:60px;
+    background: #00d8ff;
+    color: #fff;
+    border: none;
+    position: relative;
+    height: 60px;
     font-size: 20px;
-    cursor:pointer;
-    transition:800ms ease all;
-    outline:none;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
 }
 
 .movebtn:hover {
-    background:#fff;
-    color:#00D8FF;
+    background: #fff;
+    color: #00d8ff;
 }
 
-.movebtn:before, .movebtn:after {
-    content:'';
-    position:absolute;
-    top:0;
-    right:0;
-    height:2px;
-    width:0;
-    background: #1AAB8A;
-    transition:400ms ease all;
+.movebtn:before,
+.movebtn:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #1aab8a;
+    transition: 400ms ease all;
 }
 
 .movebtn:after {
-    right:inherit;
-    top:inherit;
-    left:0;
-    bottom:0;
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
 }
 
-.movebtn:hover:before, .movebtn:hover:after {
-    width:100%;
-    transition:800ms ease all;
+.movebtn:hover:before,
+.movebtn:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
 }
-
 
 /* Button hover up */
 .raise {

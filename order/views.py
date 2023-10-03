@@ -6,10 +6,11 @@ from django.views.generic.base import View
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 
+
 @login_required
 def order_create(request):
     cart = Cart(request)
-    if request.method == 'POST':
+    if request.method == "POST":
         form = OrderCreateForm(request.POST)
         if form.is_valid():
             order = form.save()
@@ -18,21 +19,25 @@ def order_create(request):
                 order.discount = cart.coupon.amount
                 order.save()
             for item in cart:
-                OrderItem.objects.create(order=order, product=item['product'],
-                                         price=item['price'], quantity=item['quantity'])
+                OrderItem.objects.create(
+                    order=order,
+                    product=item["product"],
+                    price=item["price"],
+                    quantity=item["quantity"],
+                )
 
             cart.clear()
-            return render(request, 'order/created.html', {'order': order})
+            return render(request, "order/created.html", {"order": order})
     else:
         form = OrderCreateForm()
-    return render(request, 'order/create.html', {'cart': cart, 'form': form})
+    return render(request, "order/create.html", {"cart": cart, "form": form})
 
 
 # ajax로 결제 후에 보여줄 결제 완료 화면
 def order_complete(request):
-    order_id = request.GET.get('order_id')
+    order_id = request.GET.get("order_id")
     order = Order.objects.get(id=order_id)
-    return render(request, 'order/created.html', {'order': order})
+    return render(request, "order/created.html", {"order": order})
 
 
 class OrderCreateAjaxView(View):
@@ -50,12 +55,14 @@ class OrderCreateAjaxView(View):
                 order.discount = cart.coupon.amount
             order = form.save()
             for item in cart:
-                OrderItem.objects.create(order=order, product=item['product'], price=item['price'],
-                                         quantity=item['quantity'])
+                OrderItem.objects.create(
+                    order=order,
+                    product=item["product"],
+                    price=item["price"],
+                    quantity=item["quantity"],
+                )
             cart.clear()
-            data = {
-                "order_id": order.id
-            }
+            data = {"order_id": order.id}
             return JsonResponse(data)
         else:
             return JsonResponse({}, status=401)
@@ -67,29 +74,25 @@ class OrderCheckoutAjaxView(View):
         if not request.user.is_authenticated:
             return JsonResponse({"authenticated": False}, status=403)
 
-        order_id = request.POST.get('order_id')
+        order_id = request.POST.get("order_id")
         order = Order.objects.get(id=order_id)
-        amount = request.POST.get('amount')
+        amount = request.POST.get("amount")
 
         try:
             merchant_order_id = OrderTransaction.objects.create_new(
-                order=order,
-                amount=amount
+                order=order, amount=amount
             )
         except Exception as e:
             print(e, 11)
             merchant_order_id = None
 
-
         if merchant_order_id is not None:
-            data = {
-                "works": True,
-                "merchant_id": merchant_order_id
-            }
+            data = {"works": True, "merchant_id": merchant_order_id}
             print(merchant_order_id, 111)
             return JsonResponse(data)
         else:
             return JsonResponse({}, status=401)
+
 
 # 실제 결제가 이뤄진 것이 있는지 확인
 class OrderImpAjaxView(View):
@@ -97,19 +100,17 @@ class OrderImpAjaxView(View):
         if not request.user.is_authenticated:
             return JsonResponse({"authenticated": False}, status=403)
 
-        order_id = request.POST.get('order_id')
+        order_id = request.POST.get("order_id")
         order = Order.objects.get(id=order_id)
-        merchant_id = request.POST.get('merchant_id')
-        imp_id = request.POST.get('imp_id')
-        amount = request.POST.get('amount')
+        merchant_id = request.POST.get("merchant_id")
+        imp_id = request.POST.get("imp_id")
+        amount = request.POST.get("amount")
         print(merchant_id, 222)
 
         try:
             print(merchant_id, 222)
             trans = OrderTransaction.objects.get(
-                order=order,
-                merchant_order_id=merchant_id,
-                amount=amount
+                order=order, merchant_order_id=merchant_id, amount=amount
             )
             print(trans, 222222)
         except Exception as e:
@@ -123,18 +124,17 @@ class OrderImpAjaxView(View):
             order.paid = True
             order.save()
 
-            data = {
-                "works": True
-            }
+            data = {"works": True}
 
             return JsonResponse(data)
         else:
             return JsonResponse({}, status=401)
 
+
 from django.contrib.admin.views.decorators import staff_member_required
+
 
 @staff_member_required
 def admin_order_detail(request, order_id):
     order = get_object_or_404(Order, id=order_id)
-    return render(request, 'order/admin/detail.html', {'order': order})
-
+    return render(request, "order/admin/detail.html", {"order": order})

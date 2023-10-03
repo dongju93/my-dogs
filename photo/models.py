@@ -4,22 +4,28 @@ from django.urls import reverse
 
 from tagging.fields import TagField
 
-class Photo(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_photos')
 
-    photo = models.ImageField(upload_to='photos/%Y/%m/%d', default='photos/no_image.png')
+class Photo(models.Model):
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="user_photos"
+    )
+
+    photo = models.ImageField(
+        upload_to="photos/%Y/%m/%d", default="photos/no_image.png"
+    )
     text = models.TextField()
 
     tag = TagField()
 
-    like_user_set = models.ManyToManyField(User, blank=True,
-                                           related_name='like_user_set', through='Like')
+    like_user_set = models.ManyToManyField(
+        User, blank=True, related_name="like_user_set", through="Like"
+    )
 
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['-updated']
+        ordering = ["-updated"]
 
     @property
     def like_count(self):
@@ -29,7 +35,7 @@ class Photo(models.Model):
         return self.author.username + " " + self.created.strftime("%Y-%m-%d %H:%M:%S")
 
     def get_absolute_url(self):
-        return reverse('photo:photo_detail', args=[str(self.id)])
+        return reverse("photo:photo_detail", args=[str(self.id)])
 
 
 class Like(models.Model):
