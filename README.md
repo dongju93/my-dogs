@@ -16,5 +16,5 @@
 
 > Change AWS S3 file upload method
   - Both web static files and user-uploaded files are stored in an `AWS S3` bucket
-  - Now, `Lambda Edge` is employed for credential and presigned URL generation  
-  while `CloudFront` is utilized with S3 for file uploads and downloads
+  - Now, `AWS Lambda Edge` is employed for credential and presigned URL generation  
+  while `AWS CloudFront` is utilized with S3 for file uploads and downloads
