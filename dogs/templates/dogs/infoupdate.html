@@ -1,5 +1,5 @@
-{% extends 'base.html' %} {% block title %} - 기본정보 수정{% endblock %} {%
-block content %}
+{% extends 'base.html' %} {% block title %} - 기본정보 수정 {% endblock %}
+{% block content %}
 <div class="row">
     <div class="col-md-2"></div>
     <div
@@ -147,12 +147,23 @@ block content %}
 
             <p>
                 <label for="id_gender"> 성별 : </label>
-                <label id="id_gender"
-                    ><input type="radio" name="gender" maxlength="15"
-                    required="" value="Male" {% if object.gender == 'Male' %}
-                    checked {% endif %}> 수 <input type="radio" name="gender"
-                    maxlength="15" required="" value="Female" {% if
-                    object.gender == 'Female' %} checked {% endif %}> 암
+                <label id="id_gender">
+                    <input
+                        type="radio"
+                        name="gender"
+                        maxlength="15"
+                        required=""
+                        value="Male"
+                        {% if object.gender == 'Male' %} checked {% endif %}
+                /> 수
+                    <input
+                        type="radio"
+                        name="gender"
+                        maxlength="15" 
+                        required=""
+                        value="Female"
+                        {% if object.gender == 'Female' %} checked {% endif %}
+                    /> 암
                 </label>
             </p>
 

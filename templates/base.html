@@ -5,6 +5,7 @@
     <meta name="viewpoint" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>
       MY DOGS{% block title %}
+
       {% endblock %}
     </title>
 
@@ -20,7 +21,8 @@
     {% load static %} {% block script %}
 
     {% endblock %}
-    <link rel="stylesheet" href="https://mydogs-s3.s3.ap-northeast-2.amazonaws.com/static/css/baseM.css?versionId=null" />
+    {% comment %} <link rel="stylesheet" href="https://mydogs-s3.s3.ap-northeast-2.amazonaws.com/static/css/baseM.css?versionId=null" /> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/baseM.css' %}" />
 
     {% block css %}
 
